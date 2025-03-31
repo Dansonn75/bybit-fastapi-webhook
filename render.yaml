@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: tv-bot-test
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port 10000"
+    envVars:
+      - key: BYBIT_API_KEY
+        sync: false
+      - key: BYBIT_API_SECRET
+        sync: false
+      - key: BYBIT_TESTNET
+        value: "True"
