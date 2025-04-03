@@ -22,7 +22,7 @@ async def webhook(request: Request):
         side = payload.get("side", "Buy")
         qty = float(payload.get("qty", 0.1))
 
-        order = session.place_active_order(
+        order = session.place_order(
             category="linear",
             symbol=symbol,
             side=side,
